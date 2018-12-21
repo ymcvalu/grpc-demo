@@ -12,7 +12,7 @@ import (
 
 func main() {
 	concurrentNum := 10000
-	log.Println("测试 %d 并发请求 ...",concurrentNum)
+	log.Printf("测试 %d 并发请求 ...",concurrentNum)
 	Run1(concurrentNum)
 	Run2(concurrentNum)
 }
