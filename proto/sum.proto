@@ -1,0 +1,23 @@
+syntax = "proto3"; // 使用 proto3
+
+// java生成选项
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+
+package proto; // 生成的go所属的package
+
+message SumResp {
+    int64 sum = 1;
+}
+
+message SumReq {
+    int64 a = 1;
+    int64 b = 2;
+}
+
+
+service CalcSvc {
+    // 每个rpc接口声明都必须有且一个参数和一个返回值
+    rpc Sum(SumReq) returns (SumResp) {}
+}
